@@ -30,6 +30,20 @@ body {
   margin-top: 15px;
 }
 
+.bold {
+  font-weight: bold;
+}
+
+.ringLoader div:first-child {
+  margin: 0 auto;
+}
+
+.orderBookType {
+  color: black;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
 .orderBooks {
   padding-top: 30px;
   padding-bottom: 30px;

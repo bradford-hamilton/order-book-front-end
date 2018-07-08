@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import socketIOClient from 'socket.io-client'
-import { Grid, Row, Col, Button, MenuItem, DropdownButton } from 'react-bootstrap';
+import { Grid, Row, Col, MenuItem, DropdownButton } from 'react-bootstrap';
+import { MARKETS } from './constants';
+import OrderBook from './OrderBook/OrderBook';
 import NavBar from './NavBar/NavBar';
 import './App.css';
 
@@ -34,7 +36,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.response);
     return (
       <div className="App">
         <NavBar />
@@ -53,18 +54,15 @@ class App extends Component {
                 id="dropdown-basic"
                 onSelect={this.send}
               >
-                <MenuItem
-                  eventKey="BTC-ETH"
-                  active={this.state.selected === 'BTC-ETH'}
-                >
-                  BTC-ETH
-                </MenuItem>
-                <MenuItem
-                  eventKey="BTC-DOGE"
-                  active={this.state.selected === 'BTC-DOGE'}
-                >
-                  BTC-DOGE
-                </MenuItem>
+                {MARKETS.map(pair => (
+                  <MenuItem
+                    key={pair}
+                    eventKey={pair}
+                    active={this.state.selected === pair}
+                  >
+                    {pair}
+                  </MenuItem>
+                ))}
               </DropdownButton>
             </Col>
           </Row>
@@ -75,48 +73,18 @@ class App extends Component {
           </Row>
           <Row className="orderBooks">
             <Col xs={12} md={6}>
-              <div className="orderColumns">
-                <p>Bid</p>
-                <p>Amount</p>
-                <p>Exchange</p>
-              </div>
-              {this.state.loading ? (
-                <div>loading</div>
-              ) : (
-                <div className="bookBackground">
-                  {this.state.response && (
-                    this.state.response.allBids.map((bid, i) => (
-                      <div className="orderWrapper" key={i}>
-                        <p className="bid">{bid.rate.toFixed(8)}</p>
-                        <p className="quantity">{bid.quantity.toFixed(8)}</p>
-                        <p className="exchange">{bid.exchange}</p>
-                      </div>
-                    ))
-                  )}
-                </div>
-              )}
+              <OrderBook
+                type="Bid"
+                loading={this.state.loading}
+                data={this.state.response && this.state.response.allBids}
+              />
             </Col>
             <Col xs={12} md={6}>
-              <div className="orderColumns">
-                <p>Ask</p>
-                <p>Amount</p>
-                <p>Exchange</p>
-              </div>
-              {this.state.loading ? (
-                <div>loading</div>
-              ) : (
-                <div className="bookBackground">
-                  {this.state.response && (
-                    this.state.response.allAsks.map((ask, i) => (
-                      <div className="orderWrapper" key={i}>
-                        <p className="ask">{ask.rate.toFixed(8)}</p>
-                        <p className="quantity">{ask.quantity.toFixed(8)}</p>
-                        <p className="exchange">{ask.exchange}</p>
-                      </div>
-                    ))
-                  )}
-                </div>
-              )}
+              <OrderBook
+                type="Ask"
+                loading={this.state.loading}
+                data={this.state.response && this.state.response.allAsks}
+              />
             </Col>
           </Row>
         </Grid>
