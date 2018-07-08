@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavItem, Navbar, Nav } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
 
 const NavBar = () => (
   <Navbar inverse>
