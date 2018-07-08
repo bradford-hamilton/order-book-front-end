@@ -1,3 +1,84 @@
-.App {
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+body {
+  background-color: #F2F2F0;
+  font-family: 'Raleway', sans-serif;
+}
+
+.headerRow {
   text-align: center;
+  padding-bottom: 30px;
+}
+
+.getStartedRow {
+  text-align: center;
+}
+
+.App h1 {
+  font-size: 4rem;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+.App h4 {
+  font-size: 2rem;
+  color: grey;
+}
+
+.market {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.orderBooks {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.bookBackground {
+  background-color: #daedff;
+  padding: 4px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 2px 2px #B0BCCB;
+}
+
+.orderColumns {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.orderWrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 4px;
+  background-color: #FFFFFF;
+  height: 30px;
+  width: 100%;
+  border-radius: 3px;
+}
+
+.bid {
+  margin: 0;
+  color: green;
+  width: 100px;
+}
+
+.ask {
+  margin: 0;
+  color: red;
+  width: 100px;
+}
+
+.exchange {
+  margin: 0;
+  width: 100px;
+  text-align: right;
+}
+
+.quantity {
+  margin: 0;
+  color: grey;
+  width: 100px;
 }
