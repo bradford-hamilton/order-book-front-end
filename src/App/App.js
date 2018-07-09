@@ -39,11 +39,11 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar />
-        <Grid>
+        <Grid fluid>
           <Row className="headerRow">
             <Col xs={12}>
               <h1>Welcome to the MasterBook</h1>
-              <h4>May the odds be ever in your favour.</h4>
+              <h4>May the numbers be ever in your favour.</h4>
             </Col>
           </Row>
           <Row className="getStartedRow">
@@ -71,22 +71,24 @@ class App extends Component {
               <h3>Selected Market: {this.state.selected}</h3>
             </Col>
           </Row>
-          <Row className="orderBooks">
-            <Col xs={12} md={6}>
-              <OrderBook
-                type="Bid"
-                loading={this.state.loading}
-                data={this.state.response && this.state.response.allBids}
-              />
-            </Col>
-            <Col xs={12} md={6}>
-              <OrderBook
-                type="Ask"
-                loading={this.state.loading}
-                data={this.state.response && this.state.response.allAsks}
-              />
-            </Col>
-          </Row>
+          <Grid>
+            <Row className="orderBooks">
+              <Col xs={12} md={6}>
+                <OrderBook
+                  type="Bid"
+                  loading={this.state.loading}
+                  data={this.state.response && this.state.response.allBids}
+                />
+              </Col>
+              <Col xs={12} md={6}>
+                <OrderBook
+                  type="Ask"
+                  loading={this.state.loading}
+                  data={this.state.response && this.state.response.allAsks}
+                />
+              </Col>
+            </Row>
+          </Grid>
         </Grid>
       </div>
     );
