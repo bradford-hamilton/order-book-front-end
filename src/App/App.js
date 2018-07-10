@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import socketIOClient from 'socket.io-client'
 import { Grid, Row, Col, MenuItem, DropdownButton } from 'react-bootstrap';
-import { MARKETS } from './constants';
+import { MARKETS } from '../constants';
 import OrderBook from './OrderBook/OrderBook';
 import NavBar from './NavBar/NavBar';
 import './App.css';
@@ -10,7 +10,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      socket: socketIOClient('http://localhost:4000'),
+      socket: socketIOClient(process.env.REACT_APP_API_URL),
       response: null,
       loading: true,
       selected: 'BTC-ETH',
