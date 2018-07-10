@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<OrderBook /> snapshot 1`] = `
+Array [
+  <h4
+    className="orderBookType"
+>
+    <span
+        className="bold"
+    >
+        Live Order Book
+    </span>
+     - 
+    Bid
+</h4>,
+  <div
+    className="orderColumns"
+>
+    <p>
+        Bid
+    </p>
+    <p>
+        Amount
+    </p>
+    <p>
+        Exchange
+    </p>
+</div>,
+  <div
+    className="bookBackground"
+>
+    <div
+        className="orderWrapper"
+    >
+        <p
+            className="bid"
+        >
+            3.00000000
+        </p>
+        <p
+            className="quantity"
+        >
+            100.00000000
+        </p>
+        <p
+            className="exchange"
+        >
+            bittrex
+        </p>
+    </div>
+    <div
+        className="orderWrapper"
+    >
+        <p
+            className="bid"
+        >
+            3.00000000
+        </p>
+        <p
+            className="quantity"
+        >
+            100.00000000
+        </p>
+        <p
+            className="exchange"
+        >
+            poloniex
+        </p>
+    </div>
+    <div
+        className="orderWrapper"
+    >
+        <p
+            className="bid"
+        >
+            3.00000000
+        </p>
+        <p
+            className="quantity"
+        >
+            100.00000000
+        </p>
+        <p
+            className="exchange"
+        >
+            bittrex
+        </p>
+    </div>
+</div>,
+]
+`;
