@@ -19,7 +19,7 @@ class App extends Component {
 
   componentDidMount() {
     this.state.socket.emit('marketPair', this.state.selected);
-    this.state.socket.on('newData', data => {
+    this.state.socket.on('newOrders', data => {
       this.setState({
         response: data,
         loading: false,
