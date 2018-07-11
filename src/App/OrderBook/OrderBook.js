@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 import { RingLoader } from 'react-spinners';
 
 const OrderBook = ({ type, loading, data }) => (
@@ -33,3 +34,11 @@ const OrderBook = ({ type, loading, data }) => (
 );
 
 export default OrderBook;
+
+OrderBook.propTypes = {
+  type: PropTypes.string.isRequired,
+  loading: PropTypes.bool.isRequired,
+  data: PropTypes.arrayOf(PropTypes.shape({})),
+}
+
+OrderBook.defaultProps = { data: null };
